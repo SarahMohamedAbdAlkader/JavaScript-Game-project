@@ -1,0 +1,207 @@
+header, #choosehero{
+    text-align: center;
+    font-family: "Impact";
+    font-style: normal;
+    color: black;
+    font-size: 120px ;
+    position: absolute;
+    text-decoration: underline dotted white;
+    text-shadow:0 5px orange;
+  left: 260px;
+  top: 80px;
+  }
+ 
+  
+  body{
+ background-image: url("pq.png");
+ 
+ background-position: center; /* Center the image */
+ background-repeat: no-repeat;
+ background-size: cover;
+ height: 200px;
+ background-attachment: fixed;
+}
+.levelpage {
+    background-image: url("screen-5.jpg");
+
+    background-size: 35%;
+    background-position: right;
+    background-attachment: fixed;
+}
+
+  .button {
+    text-align: center;
+    font-family: "Impact";
+    border: 3px solid black;
+  background-color:orange;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  left: 285px;
+  top: 220px;
+  font-size: 30px;
+    display: inline-block;
+    border-radius: 8px;
+   
+min-width: 500px;
+min-height: 50px;
+  } 
+  .startbtn{
+    
+    margin-top: 50;
+      }
+  .setbtn{
+    
+margin-top: 250;
+  }
+  .helpbtn{
+
+    margin-top: 150;
+
+      }
+
+.level1btn{
+    background-color:yellow;
+    margin-top: -7;
+    position: relative;
+    left: 340px;
+    top:300px;
+    min-width: 250px;
+    
+    
+}   
+
+.level2btn{
+    background-color:orange;
+    margin-top: 85;
+    position: absolute;
+    left: 350px;
+    top:280px;
+    min-width: 250px;
+    
+      }
+      .level3btn{background-color:red;
+        position: absolute;
+        left: 350px;
+        top:430px;
+        min-width: 250px;
+       
+          }
+
+
+.exitbtn{
+
+    position: relative;
+    left: 25px;
+    top: 450px;
+    width: 120px;
+    height:55px;
+    border-radius: 8px;
+    color: white;
+    font-size: 25px;
+    background-color: red;
+
+          }
+#levelspage{
+
+  font-size: 80px;
+}
+ .backbtn{
+
+    position: relative;
+    left: -180px;
+    top: 550px;
+    width: 120px;
+    height:55px;
+    border-radius: 8px;
+    color: white;
+    font-size: 25px;
+    background-color: black;
+
+          }
+
+   .backbtn2{
+
+    position: relative;
+    left: -880px;
+    top: -500px;
+    width: 120px;
+    height:55px;
+    border-radius: 8px;
+    color: white;
+    font-size: 25px;
+    background-color: black;
+
+          }       
+   .nextbtn{
+
+    position: relative;
+    left: 350px;
+    top: 550px;
+    width: 120px;
+    height:55px;
+    border-radius: 8px;
+    color: white;
+    font-size: 25px;
+    background-color: blue;
+
+          }      
+    
+.nextbtn2{
+
+    position: relative;
+    left:190px;
+    top: -500px;
+    width: 120px;
+    height:55px;
+    border-radius: 8px;
+    color: white;
+    font-size: 25px;
+    background-color: blue;
+  }
+ #minionGif{
+  position: relative;
+  left: 120px;
+  top: 550px;
+  
+ }         
+
+ #hero1{
+width:50 px;
+height: 300px;
+position: relative;
+left: 625px;
+bottom: -50px;
+ }
+ #hero2{
+  width:50 px;
+  height: 320px;
+  position: relative;
+  left: 140px;
+  bottom: -250px;
+   }
+.charbody,#helpPage{
+
+  background-color: white;
+  background-image: none;
+}        
+
+#mycanvas{
+  position: relative;
+  left: -20px;
+  bottom: -130px;
+
+}
+
+#mycanvas2{
+  position: relative;
+  left: 10px;
+  top: -370;
+
+}
+      
+h1{
+
+background-image: none;
+
+}
