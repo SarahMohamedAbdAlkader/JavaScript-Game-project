@@ -1,46 +1,88 @@
 class frogCharacter {
-
-    constructor(canvas) {
+    constructor() {
         this.width = 100;
         this.height = 100;
-
+        this.step = 10;
         this.position = {
-            x: 10,
-            y: 10
-
+            x: canvas.width/2 - this.width/2 ,
+            y: canvas.height - this.height - 10
         }
+    }
+    setPosition(x,y){
+        this.position.x = x;
+        this.position.y = y;
     }
     draw(ctx){
         let frog = document.getElementById("frog");
         ctx.drawImage( frog , this.position.x, this.position.y, this.width , this.height);
+    }
+    moveLeft(){
+        this.position.x += this.step;
+        if(this.position.x + this.width > canvas.width) 
+            this.position.x = canvas.width - this.width;
+    }
+    moveRight(){
+        this.position.x -= this.step;
+        if(this.position.x < 0) this.position.x = 0; 
+    }
+    moveUp(){
+        this.position.y -= this.step
+        if(this.position.y < 0) this.position.y = 0;
+        
+    }
+}
+class InputHandler{
+    constructor(frog){
+        document.addEventListener("keydown", function(event){
+            switch (event.keyCode){
+                case 39 : //left
+                    frog.moveLeft();
+                    break;
+                case 37 : //right
+                    frog.moveRight();
+                    break;
+                case 38 : //up
+                    frog.moveUp();
+                    break;
+            } 
+        });
 
     }
+}
 
-    update(deltaTime){
+function detectCollision(rect1 , rect2){
+    var left1 = rect1.position.x ;
+    var right1 = rect1.position.x + rect1.width ;
+    var up1 = rect1.position.y;
 
-       if(!deltaTime) return;
-       this.position.x += 10 / deltaTime;
-    }
+    var left2 = rect2.position.x;
+    var right2 = rect2.position.x + rect2.width ;
+    var down2 =  rect2.position.y + rect2.height  ;
+
+    if( (left1 < right2 && left1 > left2 || right1 < right2 && right1 > left2 )
+        && up1 < down2 )
+        console.log("collision !!");
 }
 
 let canvas = document.getElementById("gameCanvas");
 let ctx = canvas.getContext("2d");
 
-let frog = new frogCharacter(canvas);
+let frog = new frogCharacter();
 frog.draw(ctx);
-let lastTime =0 ;
 
-function loop(timeStamp) {
+let frog2 = new frogCharacter();
+frog2.setPosition(100 ,100);
+frog2.draw(ctx);
 
-    let deltaTime = timeStamp - lastTime ;
-    lastTime = timeStamp ;
-    
+new InputHandler(frog);
+
+function loop() {   
     ctx.clearRect(0,0 ,canvas.width ,canvas.height );
-    frog.update(deltaTime);
     frog.draw(ctx);
-    
+    frog2.draw(ctx);
+    detectCollision(frog , frog2);
+   
     requestAnimationFrame(loop);
 }
 
 loop();
-
