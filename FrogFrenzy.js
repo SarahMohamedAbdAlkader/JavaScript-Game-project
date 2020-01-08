@@ -53,7 +53,7 @@ class carCharacter {
         ctx.drawImage( car , this.position.x, this.position.y, this.width , this.height);
     }
     update(){
-        this.position.y += this.step; // move up
+        this.position.y += this.step; // move down
     }
 }
 
