@@ -4,8 +4,10 @@ class frogCharacter {
         this.height = 100;
         this.step = 10;
         this.position = {
-            x: canvas.width/2 - this.width/2 ,
-            y: canvas.height - this.height - 10
+            //x: canvas.width/2 - this.width/2 ,
+            //y: canvas.height - this.height - 10
+            x: 10,
+            y: canvas.height/2 - this.height/2
         }
     }
     setPosition(x,y){
@@ -31,6 +33,30 @@ class frogCharacter {
         
     }
 }
+
+class carCharacter {
+    constructor() {
+        this.width = 100;
+        this.height = 100;
+        this.step = 2 ;
+        this.position = {
+            x: canvas.width/2 - this.width/2 ,
+            y: canvas.height - this.height - 10
+        }
+    }
+    setPosition(x,y){
+        this.position.x = x;
+        this.position.y = y;
+    }
+    draw(ctx){
+        let car = document.getElementById("frog");
+        ctx.drawImage( car , this.position.x, this.position.y, this.width , this.height);
+    }
+    update(){
+        this.position.y += this.step; // move up
+    }
+}
+
 class InputHandler{
     constructor(frog){
         document.addEventListener("keydown", function(event){
@@ -46,10 +72,8 @@ class InputHandler{
                     break;
             } 
         });
-
     }
 }
-
 function detectCollision(rect1 , rect2){
     var left1 = rect1.position.x ;
     var right1 = rect1.position.x + rect1.width ;
@@ -67,20 +91,24 @@ function detectCollision(rect1 , rect2){
 let canvas = document.getElementById("gameCanvas");
 let ctx = canvas.getContext("2d");
 
-let frog = new frogCharacter();
+let frog = new frogCharacter(); // the playing character
 frog.draw(ctx);
 
-let frog2 = new frogCharacter();
-frog2.setPosition(100 ,100);
-frog2.draw(ctx);
+let car = new carCharacter();
+car.draw(ctx);
+car.setPosition(300 ,0);
+
 
 new InputHandler(frog);
 
 function loop() {   
     ctx.clearRect(0,0 ,canvas.width ,canvas.height );
-    frog.draw(ctx);
-    frog2.draw(ctx);
-    detectCollision(frog , frog2);
+    frog.draw(ctx); // the playing character
+    car.draw(ctx);
+    car.update();
+
+    // for collision
+    detectCollision(frog , car);
    
     requestAnimationFrame(loop);
 }
