@@ -1,18 +1,30 @@
-header, #choosehero{
+
+
+header{
     text-align: center;
     font-family: "Impact";
     font-style: normal;
-    color: black;
-    font-size: 120px ;
-    position: absolute;
+    color: orange;
+    font-size: 90px ;
+    position: fixed;
     text-decoration: underline dotted white;
-    text-shadow:0 5px orange;
-  left: 260px;
-  top: 80px;
+    text-shadow:0 5px black;
+  left: 150px;
+  top: 0px;
   }
+  #choosehero{
+    position: relative;
+    left:290;
+    width: 800;
+    top: -180;
+
+  
+  }
+ 
  
   
   body{
+    position: fixed;
  background-image: url("pq.png");
  
  background-position: center; /* Center the image */
@@ -20,13 +32,26 @@ header, #choosehero{
  background-size: cover;
  height: 200px;
  background-attachment: fixed;
+
+}
+
+
+.charbody{
+  position: fixed;
+background-image: url("bg2.jpg");
+
+background-position: center; /* Center the image */
+background-repeat: no-repeat;
+background-size: cover;
+height: 200px;
+background-attachment: fixed;
+
 }
 .levelpage {
-    background-image: url("screen-5.jpg");
-
-    background-size: 35%;
-    background-position: right;
+    background-image: url("bg3.jpg");
     background-attachment: fixed;
+    
+   
 }
 
   .button {
@@ -37,14 +62,14 @@ header, #choosehero{
   color: black;
   cursor: pointer;
   position: absolute;
-  left: 285px;
-  top: 220px;
+  left: 485px;
+  top: 90px;
   font-size: 30px;
     display: inline-block;
     border-radius: 8px;
    
-min-width: 500px;
-min-height: 50px;
+min-width: 170px;
+min-height: 60px;
   } 
   .startbtn{
     
@@ -52,21 +77,20 @@ min-height: 50px;
       }
   .setbtn{
     
-margin-top: 250;
+margin-top: 200;
   }
   .helpbtn{
 
-    margin-top: 150;
+    margin-top: 120;
 
       }
 
 .level1btn{
     background-color:yellow;
-    margin-top: -7;
     position: relative;
-    left: 340px;
+    left: 460px;
     top:300px;
-    min-width: 250px;
+    min-width: 390px;
     
     
 }   
@@ -75,16 +99,16 @@ margin-top: 250;
     background-color:orange;
     margin-top: 85;
     position: absolute;
-    left: 350px;
+    left: 460px;
     top:280px;
-    min-width: 250px;
+    min-width: 390px;
     
       }
       .level3btn{background-color:red;
         position: absolute;
-        left: 350px;
+        left: 460px;
         top:430px;
-        min-width: 250px;
+        min-width: 390px;
        
           }
 
@@ -93,23 +117,26 @@ margin-top: 250;
 
     position: relative;
     left: 25px;
-    top: 450px;
+    top: 550px;
     width: 120px;
     height:55px;
     border-radius: 8px;
     color: white;
     font-size: 25px;
     background-color: red;
+    position: fixed;
 
           }
 #levelspage{
 
-  font-size: 80px;
+  font-size: 100px;
+  left: 400px;
+    top: 30px;
 }
  .backbtn{
 
     position: relative;
-    left: -180px;
+    left: -290px;
     top: 550px;
     width: 120px;
     height:55px;
@@ -123,8 +150,8 @@ margin-top: 250;
    .backbtn2{
 
     position: relative;
-    left: -880px;
-    top: -500px;
+    left:-1050px;
+    top: 260px;
     width: 120px;
     height:55px;
     border-radius: 8px;
@@ -136,7 +163,7 @@ margin-top: 250;
    .nextbtn{
 
     position: relative;
-    left: 350px;
+    left: 580px;
     top: 550px;
     width: 120px;
     height:55px;
@@ -150,55 +177,39 @@ margin-top: 250;
 .nextbtn2{
 
     position: relative;
-    left:190px;
-    top: -500px;
+    left:1s00px;
+    top: 550px;
     width: 120px;
     height:55px;
     border-radius: 8px;
     color: white;
     font-size: 25px;
     background-color: blue;
+    position: fixed;
   }
- #minionGif{
-  position: relative;
-  left: 120px;
-  top: 550px;
-  
- }         
+        
 
  #hero1{
-width:50 px;
+width:10 px;
 height: 300px;
-position: relative;
-left: 625px;
-bottom: -50px;
+left: 825px;
+bottom: -340px;
+position: absolute;
  }
  #hero2{
   width:50 px;
   height: 320px;
   position: relative;
-  left: 140px;
-  bottom: -250px;
+  left: -520px;
+  bottom: -210px;
    }
-.charbody,#helpPage{
+#helpPage{
 
   background-color: white;
   background-image: none;
 }        
 
-#mycanvas{
-  position: relative;
-  left: -20px;
-  bottom: -130px;
 
-}
-
-#mycanvas2{
-  position: relative;
-  left: 10px;
-  top: -370;
-
-}
       
 h1{
 
