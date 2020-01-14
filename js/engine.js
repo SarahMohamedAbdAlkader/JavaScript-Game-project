@@ -169,6 +169,7 @@ var Engine = (function(global) {
      * game loop.
      */
     function init() {
+        window.scrollTo(0, 1000);
         reset();
         lastTime = Date.now();
         main();
