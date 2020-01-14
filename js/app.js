@@ -158,6 +158,7 @@ character.prototype.handleInput = function(key) {
 };
 
 character.prototype.reset = function() {
+    window.scrollTo(0, 1000);
     this.x=550 ;
     this.y=780;
 };
@@ -192,7 +193,7 @@ function randomIntFromInterval(min,max)
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
-document.addEventListener('keyup', function(e) {
+document.addEventListener('keydown', function(e) {
     var allowedKeys = {
         37: 'left',
         38: 'up',
