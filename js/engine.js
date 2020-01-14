@@ -198,7 +198,9 @@ var Engine = (function(global) {
     function updateEntities(dt) {
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
+        
         });
+        
         character.update();
     }
 
@@ -223,7 +225,8 @@ var Engine = (function(global) {
                 'images/stone-block.png',   // Row 7 of 7 of 
                 'images/stone-block.png',   // Row 8 of 8 of stone
                 'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/grass-block.png' ,   // Row 2 of 2 of grass
+              
             ],
             numRows = 10,
             numCols = 16,
@@ -282,6 +285,7 @@ var Engine = (function(global) {
         'images/grass-block.png',
         'images/car.png',
         'images/hero1.png',
+        'images/beetle.png'
         
     ]);
     Resources.onReady(init);
