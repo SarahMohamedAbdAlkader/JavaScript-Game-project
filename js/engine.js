@@ -113,7 +113,7 @@ var Engine = (function(global) {
 
     var canvas = document.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        level1 = document.getElementById("level1"),
+        //level1 = document.getElementById("level1"),
         lastTime;
 
     canvas.width = 1305;
