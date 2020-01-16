@@ -50,9 +50,8 @@ class minionCharacter {
             this.position.y=canvas.height-minion.height;
         }
         if( this.position.y<=canvas.height)
-        window.scrollTo( 0, this.position.y - minion.step );
-        if( this.position.y==650)
-        window.scrollTo( 0, this.position.y - minion.step );
+        window.scrollTo( 0, this.position.y - minion.height );
+      
        
 console.log(this.position.y)
 
@@ -166,7 +165,7 @@ let car9 = new Car();
 let car10 = new Car();
 
 
-car.setPosition(0 ,20);
+car.setPosition(0 ,40);
 car2.setPosition(-940 ,60);
 car3.setPosition(90 ,140);
 car4.setPosition(-220 ,265);
