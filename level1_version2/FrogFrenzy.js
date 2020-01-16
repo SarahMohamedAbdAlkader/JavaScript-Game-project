@@ -38,11 +38,11 @@ class minionCharacter {
 
     moveDown(){
         this.position.y += this.step
-        if(this.position.y >2420) this.position.y =2420;
+        if(this.position.y >canvas.height) this.position.y =canvas.height;
         
     }
     update(){
-        if(this.position.y==10) {
+        if(this.position.y==20) {
         
             this.score+=1;
             document.getElementById("score").innerHTML = this.score;
@@ -164,9 +164,7 @@ let car7 = new Car();
 let car8 = new Car();
 let car9 = new Car();
 let car10 = new Car();
-let car11 = new Car();
-let car12 = new Car();
-let car13 = new Car();
+
 
 car.setPosition(0 ,20);
 car2.setPosition(-940 ,60);
@@ -175,13 +173,11 @@ car4.setPosition(-220 ,265);
 car5.setPosition(-100 ,392);
 car6.setPosition(0 ,560);
 car7.setPosition(50 ,760);
-car8.setPosition(50 ,1200);
-car9.setPosition(90 ,1450);
-car10.setPosition(-50 ,1650);
-car11.setPosition(450 ,1970);
-car12.setPosition(790 ,2070);
-car13.setPosition(50 ,2170);
-var cars=[car,car2,car3,car4,car5,car5,car6,car7,car8,car9,car10,car11,car12,car13]
+car8.setPosition(50 ,810);
+car9.setPosition(90 ,900);
+car10.setPosition(-50 ,960);
+
+var cars=[car,car2,car3,car4,car5,car5,car6,car7,car8,car9,car10]
 new InputHandler(minion);
 
 
@@ -216,12 +212,7 @@ function loop() {
     car9.update();
     car10.draw(ctx);
     car10.update();
-    car11.draw(ctx);
-    car11.update();
-    car12.draw(ctx);
-    car12.update();
-    car13.draw(ctx);
-    car13.update();
+  
 
 
     // for collision
