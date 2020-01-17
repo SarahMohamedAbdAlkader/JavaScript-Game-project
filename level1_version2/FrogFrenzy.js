@@ -1,15 +1,13 @@
-
-  
-class minionCharacter {
+  class minionCharacter {
     constructor() {
-        this.width = 50;
-        this.height = 80;
+        this.width = 80;
+        this.height = 100;
         this.step = 10;
         this.score=0;
         this.position = {
             //x: canvas.width/2 - this.width/2 ,
             //y: canvas.height - this.height - 10
-            x: 20,
+            x: 600,
             y: canvas.height-this.height
         }
     }
@@ -17,8 +15,19 @@ class minionCharacter {
         this.position.x = x;
         this.position.y = y;
     }
-    draw(ctx){
+    draw(ctx){ 
+       
         let minion = document.getElementById("minion");
+         if(localStorage.getItem('Heroboy')==='0')
+         {
+         // minion.attr("src",localStorage.getItem('GirlImg'));
+          minion.src=localStorage.getItem('GirlImg');
+         }
+         else if (localStorage.getItem('Heroboy')==='1')
+         {
+           // minion.attr("src",localStorage.getItem('BoyImg'));
+           minion.src=localStorage.getItem('BoyImg');
+         }
         ctx.drawImage( minion , this.position.x, this.position.y, this.width , this.height);
     }
     moveLeft(){
@@ -142,7 +151,7 @@ function detectCollision(rect1 , rect2){
 }
 function reset()
 {
-minion.position.x=20;
+minion.position.x=600;
 minion.position.y=canvas.height-minion.height;
 
 
@@ -151,6 +160,7 @@ let canvas = document.getElementById("gameCanvas");
 let ctx = canvas.getContext("2d");
 
 let minion = new minionCharacter(); // the playing character
+//minion.setPosition()
 minion.draw(ctx);
 
 let car = new Car();
@@ -182,11 +192,10 @@ new InputHandler(minion);
 
 function randomIntFromInterval(min,max)
 {    dt = (max - min) / 1000.0;
-  
-    var result= Math.floor((Math.random()*(max-min+1)+min));
-    return result*dt;
-}
 
+     var result= Math.floor((Math.random()*(max-min+1)+min));
+     return result*dt;
+}
 
 function loop() {   
     ctx.clearRect(0,0 ,canvas.width ,canvas.height );
