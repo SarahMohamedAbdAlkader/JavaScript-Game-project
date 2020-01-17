@@ -1,7 +1,9 @@
-  class minionCharacter {
+$("body").append('<audio src="bgsound.mp3" controls="" autoplay="" loop="true" hidden="true"></audio>') 
+
+class minionCharacter {
     constructor() {
-        this.width = 80;
-        this.height = 100;
+        this.width = 50;
+        this.height = 90;
         this.step = 10;
         this.score=0;
         this.position = {
@@ -54,12 +56,13 @@
         if(this.position.y==20) {
         
             this.score+=1;
+            $("body").append('<audio src="winning.mp3" controls="" autoplay=""  hidden="true"></audio>') 
             document.getElementById("score").innerHTML = this.score;
     
             this.position.y=canvas.height-minion.height;
         }
         if( this.position.y<=canvas.height)
-        window.scrollTo( 0, this.position.y - minion.height );
+        window.scrollTo( 0, this.position.y -400 );
       
        
 console.log(this.position.y)
@@ -70,8 +73,8 @@ console.log(this.position.y)
 
 class Car {
     constructor() {
-        this.width = 140;
-        this.height = 140;
+        this.width = 160;
+        this.height = 160;
 
         this.speed=randomIntFromInterval(200,700);
         this.position = {
@@ -145,7 +148,9 @@ function detectCollision(rect1 , rect2){
     if( (left1 < right2 && left1 > left2 || right1 < right2 && right1 > left2 )
         && up1 < down2 )
        { console.log("collision !!");
-        reset()}
+        reset()
+        $("body").append('<audio src="punch.mp3" controls="" autoplay=""  hidden="true"></audio>') 
+    }
         
 
 }
