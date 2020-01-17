@@ -2,15 +2,27 @@ $(".startbtn").click(function(){
 
     window.location.href = "characters.html";
 })
+$("body").after('<div id="myModal" class="modal"><!-- Modal content --><div class="modal-content"><span class="close">&times;</span><p id="helpinsurtuction">Here is Your Instructions to become a WINNER:</br></p><p id="helpinsurtuction2">Choose your HERO..</br></br>Use your keyboard arrows to move your character.. </br></br>WATCH OUT, try to avoid your enemies..</br></br>Try to make your hero reach safely.</p></div></div>')
+var span = document.getElementsByClassName("close")[0];
+var modal = document.getElementById("myModal");
+modal.style.display = "none";
+$(".helpbtn").on({
+    click:function(){
 
-$(".helpbtn").click(function(){
+    modal.style.display = "block";
+},
+});
 
-    window.location.href = "Help.html";
-})
+span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
 $(".nextbtn2").click(function(){
 
     window.location.href = "chooseLevel.html";
 })
+
+
 
 
 $(".setbtn").click(function(){
@@ -38,24 +50,4 @@ setInterval(function(){
 setInterval(function(){
     $('head').fadeOut( "slow" ).fadeIn("slow")
 }, 2000);
-
-var canvas1 = document.getElementById('myCanvas')
-var canvas2 = document.getElementById('myCanvas2')
-draw(canvas1);
- draw(canvas2);
- function draw(canvas) {
-   
-
-      var context = canvas.getContext('2d');
-      var centerX = canvas.width / 2;
-      var centerY = canvas.height / 2;
-      var radius = 170;
-      context.strokeStyle="black"
-      context.beginPath();
-      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-      context.lineWidth = 10;
-      context.stroke();
-      
- }
-
 
