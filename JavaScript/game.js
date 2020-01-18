@@ -66,10 +66,17 @@ class minionCharacter {
       this.position.y = canvas.height - minion.height;
       if (this.score >= 2) {
         level = 2;
+        
+        localStorage.setItem("level", "2");
         initGame();
-      } else if (this.score >= 5) {
+     
+      } 
+      if (this.score >=5) {
         level = 3;
+      
+        localStorage.setItem("level", "3");
         initGame();
+        
       }
     }
    if (this.position.y <= canvas.height)
@@ -91,7 +98,7 @@ class Car {
 
     this.speed = randomIntFromInterval(
       100 + 50 * (level - 1),
-      200 + 100 * (level - 1)
+      200 + 60 * (level - 1)
     );
     this.position = {
       x: canvas.width / 2 - this.width / 2,
@@ -174,29 +181,15 @@ function reset() {
   minion.position.x = 600;
   minion.position.y = canvas.height - minion.height;
 }
+
+
+
+
 let canvas = document.getElementById("gameCanvas");
 let ctx = canvas.getContext("2d");
-
 const getRndInteger = (min, max) =>
   Math.floor(Math.random() * (max - min)) + min;
-
 let level = localStorage.getItem("level");
-
-
-
-if(level==="2")
-{canvas.style.backgroundImage="url('../Images/street2.png')" ;
-canvas.style.borderColor="black";
-canvas.style.borderWidth=50;
-
-}
-else if(level==="3")
-{canvas.style.backgroundImage="url('../Images/street3.jpg')" ;
-canvas.style.borderColor="black";
-canvas.style.borderWidth=50;
-
-}
-
 let cars = [];
 let minion = new minionCharacter();
 function initGame() {
@@ -214,6 +207,21 @@ function initGame() {
   });
   document.getElementById("score").innerHTML = minion.score;
   document.getElementById("level").innerHTML = level;
+
+
+  if(localStorage.getItem("level")==="2")
+{canvas.style.backgroundImage="url('../Images/street2.png')" ;
+canvas.style.borderColor="black";
+canvas.style.borderWidth=50;
+
+}
+else if(localStorage.getItem("level")==="3")
+{canvas.style.backgroundImage="url('../Images/street3.jpg')" ;
+canvas.style.borderColor="black";
+document.getElementById("car").src="../Images/beetle.png";
+canvas.style.borderWidth=50;
+
+}
 }
 
 new InputHandler(minion);

@@ -2,14 +2,28 @@ $(".startbtn").click(function() {
   window.location.href = "Html/characters.html";
 });
 $("body").after(
-  '<div id="myModal" class="modal"><!-- Modal content --><div class="modal-content"><span class="close">&times;</span><p id="helpinsurtuction">Here is Your Instructions to become a WINNER:</br></p><p id="helpinsurtuction2">Choose your HERO..</br></br>Use your keyboard arrows to move your character.. </br></br>WATCH OUT, try to avoid your enemies..</br></br>Try to make your hero reach safely.</p></div></div>'
+  '<div id="myModal" class="modal"><!-- Modal content --><div class="modal-content"><span class="close">&times;</span><p id="helpinsurtuction">Here is Your Instructions to become a WINNER:</br></p><p id="helpinsurtuction2">Choose Your HERO..</br></br>Use Your Keyboard Arrows To Move Your Character.. </br></br>WATCH OUT And Try Reaching The Other Side.</br></br>EveryTime You Reach Safely You Score And Can Move To The Next Level.</p></div></div>'
 );
-var span = document.getElementsByClassName("close")[0];
+$("body").after(
+  '<div id="myModal2" class="modal"><!-- Modal content --><div class="modal-content2"><span class="close" id="us">&times;</span><p id="aboutus">Hello There </br></p><p id="helpinsurtuction2">-You Can Consider This game as a "Beta Version" for a future feature-Rich Minion Game</br></br>-We Hope That this version will make you waiting for the full game </br></br>-ITIians >>Intake 40 >>Track IOT>>In January 2020</br></br>--Heba Ibrahem    --Isaac Wahba   --Nesreen Khaled  --Sarah Mohamed</p></div></div>'
+);
+var span = document.getElementsByClassName("close")[1];
+var span2 = document.getElementsByClassName("close")[0];
 var modal = document.getElementById("myModal");
+var modal2 =document.getElementById("myModal2");
+
 modal.style.display = "none";
+modal2.style.display = "none";
+
 $(".helpbtn").on({
   click: function() {
     modal.style.display = "block";
+  }
+});
+
+$(".setbtn").on({
+  click: function() {
+    modal2.style.display = "block";
   }
 });
 
@@ -17,13 +31,13 @@ span.onclick = function() {
   modal.style.display = "none";
 };
 
+span2.onclick = function() {
+  modal2.style.display = "none";
+};
 $(".nextbtn2").click(function() {
   window.location.href = "Html/chooseLevel.html";
 });
 
-$(".setbtn").click(function() {
-  window.location.href = "../Html/settings.html";
-});
 
 $(".backbtn").click(function() {
   window.location.href = "Html/characters.html";
@@ -35,15 +49,15 @@ $(".backbtn2").click(function() {
 
 $(".level1btn").click(function() {
   window.location.href = "../Html/game.html";
-  localStorage.setItem("level", 1);
+  localStorage.setItem("level", "1");
 });
 $(".level2btn").click(function() {
   window.location.href = "../Html/game.html";
-  localStorage.setItem("level", 2);
+  localStorage.setItem("level", "2");
 });
 $(".level3btn").click(function() {
   window.location.href = "../Html/game.html";
-  localStorage.setItem("level", 3);
+  localStorage.setItem("level", "3");
 });
 
 $("#hero1").click(function() {
