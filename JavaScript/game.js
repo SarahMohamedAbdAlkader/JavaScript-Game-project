@@ -73,7 +73,7 @@ class minionCharacter {
       }
     }
    if (this.position.y <= canvas.height)
-      window.scrollTo(0, this.position.y - 300);
+      window.scrollTo(0, this.position.y - 200);
   }
 }
 function sleep(milliseconds) {
