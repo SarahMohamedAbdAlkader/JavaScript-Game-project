@@ -47,15 +47,17 @@ class minionCharacter {
   }
   moveUp() {
     this.position.y -= this.step;
-    if (this.position.y < 0) this.position.y = 0;
+    if (this.position.y < -20) this.position.y = -20;
   }
   moveDown() {
     this.position.y += this.step;
     if (this.position.y > canvas.height) this.position.y = canvas.height;
   }
-  update() {
-    if (this.position.y == 20) {
+  update() {console.log(this.position.y)
+    if (this.position.y == -20) {
+      
       this.score += 1;
+      sleep(1000)
       $("body").append(
         '<audio src="../sounds/winning.mp3" controls="" autoplay=""  hidden="true"></audio>'
       );
@@ -70,9 +72,16 @@ class minionCharacter {
         initGame();
       }
     }
-    if (this.position.y <= canvas.height)
-      window.scrollTo(0, this.position.y - 400);
+   if (this.position.y <= canvas.height)
+      window.scrollTo(0, this.position.y - 300);
   }
+}
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
 }
 
 class Car {
