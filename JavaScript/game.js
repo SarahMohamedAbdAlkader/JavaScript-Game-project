@@ -51,7 +51,7 @@ class minionCharacter {
   }
   moveDown() {
     this.position.y += this.step;
-    if (this.position.y + this.height > canvas.height) this.position.y = canvas.height;
+    if (this.position.y + this.height > canvas.height) this.position.y = canvas.height - this.height;
   }
   update() {console.log(this.position.y)
     if (this.position.y == -20) {
