@@ -51,7 +51,7 @@ class minionCharacter {
   }
   moveDown() {
     this.position.y += this.step;
-    if (this.position.y + this.height > canvas.height) this.position.y = canvas.height - this.height;
+    if (this.position.y > canvas.height) this.position.y = canvas.height;
   }
   update() {console.log(this.position.y)
     if (this.position.y == -20) {
@@ -73,7 +73,7 @@ class minionCharacter {
       }
     }
    if (this.position.y <= canvas.height)
-      window.scrollTo(0, this.position.y - 200);
+      window.scrollTo(0, this.position.y -200);
   }
 }
 function sleep(milliseconds) {
@@ -181,6 +181,22 @@ const getRndInteger = (min, max) =>
   Math.floor(Math.random() * (max - min)) + min;
 
 let level = localStorage.getItem("level");
+
+
+
+if(level==="2")
+{canvas.style.backgroundImage="url('../Images/street2.png')" ;
+canvas.style.borderColor="black";
+canvas.style.borderWidth=50;
+
+}
+else if(level==="3")
+{canvas.style.backgroundImage="url('../Images/street3.jpg')" ;
+canvas.style.borderColor="black";
+canvas.style.borderWidth=50;
+
+}
+
 let cars = [];
 let minion = new minionCharacter();
 function initGame() {
